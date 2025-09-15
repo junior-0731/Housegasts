@@ -1,0 +1,23 @@
+@use "@angular/material" as mat; //Esto lo que hace es importar los estilos de angular material y los estoy guardando en una variable llamada mat
+
+.primary{
+    @include mat.theme(
+        (
+            color:mat.$azure-palette
+        )
+    )
+} // Esto lo que hace es definir una clase para usar este color para el fondo de nuestros botones
+.secondary{
+    @include mat.theme(
+        (
+            color:mat.$magenta-palette
+        )
+    )
+}
+.warn{
+    @include mat.theme(
+        (
+            color:mat.$red-palette
+        )
+    )
+}
