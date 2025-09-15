@@ -1,0 +1,107 @@
+./history
+# Build Folders
+bin/
+obj/
+
+# User-Specific Files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Package Management
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# ASP.NET Core
+wwwroot/
+appsettings*.json
+
+# Entity Framework
+*.db
+*.mdf
+*.ldf
+
+# Publish Output
+publish/
+*.Publish.xml
+
+# Temporary Files
+*.tmp
+*.temp
+~$*
+
+# Coverage and Test Results
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
+
+# IDE Backups
+*.bak
+*.orig
+
+# Angular build and output directories
+/dist/
+/out-tsc/
+/tmp/
+/coverage/
+
+# Angular CLI specific files
+.angular/
+.angular-cli.json
+
+# Node modules and dependency files
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# Environment files
+/.env
+/.env.*.local
+
+# IDE and editor settings
+/.idea/
+/.vscode/
+/*.suo
+/*.ntvs*
+/*.njsproj
+/*.sln
+/*.sw?
+
+# Logs and temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Test output// ...existing code...
+.hitory
+// ...existing code...
+/e2e/test-output/
