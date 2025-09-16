@@ -36,16 +36,3 @@ Asegúrate de tener instalado:
 - .NET 6/8 SDK
 
 
-appsetting.json --> backend
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=COMPUTADOR1066;Database=house_gasts;Integrated Security=True;TrustServerCertificate=True"
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "AllowedHosts": "*"
-}
