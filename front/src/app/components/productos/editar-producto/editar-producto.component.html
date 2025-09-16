@@ -1,1 +1,8 @@
-<app-formulario-producto [modelo]="producto" (posteoFormulario)="guardarCambios($event)"></app-formulario-producto>
+@if(producto){  
+    <app-mostrar-errores [errores]="errores"></app-mostrar-errores>
+    <app-formulario-producto [modelo]="producto" (posteoFormulario)="guardarCambios($event)"></app-formulario-producto>
+} 
+
+@else {
+    <p>Cargando...</p>
+}

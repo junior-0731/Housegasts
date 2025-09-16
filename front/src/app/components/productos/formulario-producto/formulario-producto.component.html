@@ -1,24 +1,23 @@
-<p>formulario-genero works!</p>
 <form (submit)="guardarCambios()" [formGroup]="form"> <!-- agregar el evento submit que ejecutara una funcion guardarCambios() y un formGroup que hace referencia a form -->
     <mat-form-field appearance="outline">
         <mat-label>Nombre</mat-label> <!-- Este seria el label -->
-        <input matInput [formControl]="form.controls.Name">
+        <input matInput [formControl]="form.controls.name">
         <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
     </mat-form-field><!-- Este seria el tipo de input que seria uno normal, (es de Material icons) -->
     <mat-form-field appearance="outline">
         <mat-label>Categoria</mat-label> <!-- Este seria el label -->
-        <input matInput type="number" [formControl]="form.controls.Category">
+        <input matInput type="number" [formControl]="form.controls.category">
         <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
     </mat-form-field><!-- Este seria el tipo de input que seria uno normal, (es de Material icons) -->
 
 
     <mat-form-field appearance="outline">
         <mat-label>Unidad</mat-label> <!-- Este seria el label -->
-        <input matInput type="number" [formControl]="form.controls.Unite">
+        <input matInput type="number" [formControl]="form.controls.unite">
         <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
     </mat-form-field><!-- Este seria el tipo de input que seria uno normal, (es de Material icons) -->
     <div class="contenedor-botones">
         <button [disabled]="form.invalid" mat-flat-button type="submit">Guardar Cambios</button>
-        <a mat-stroked-button routerLink="/productos">Cancelar</a>
+        <a mat-stroked-button routerLink="/products">Cancelar</a>
     </div>
 </form>

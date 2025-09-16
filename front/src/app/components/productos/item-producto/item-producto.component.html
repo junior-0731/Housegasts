@@ -4,4 +4,8 @@
     <span class="producto-card_name">{{producto.name}}</span>
     <span class="producto-card_category">{{producto.category}}</span>
     <span class="producto-card_unite">Unidades:{{producto.unite}}</span>
+    <div class="actions-crud">
+      <button class="btn-delete" (click)="eliminar(producto.id)">Eliminar</button>
+      <button class="btn-update" (click)="actualizar()">Actualizar</button>
+    </div>
   </div>

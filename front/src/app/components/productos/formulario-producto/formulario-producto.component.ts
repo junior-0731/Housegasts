@@ -6,13 +6,15 @@ import {  ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-formulario-producto',
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, RouterLink],
   templateUrl: './formulario-producto.component.html',
   styleUrl: './formulario-producto.component.css'
 })
 export class FormularioProductoComponent implements OnInit {
+  public router = inject(Router);
   ngOnInit(): void {
     if(this.modelo !== undefined){
       this.form.patchValue(this.modelo);
@@ -48,6 +50,7 @@ export class FormularioProductoComponent implements OnInit {
     }
     const producto = this.form.value as ProductoCreacionDTO ;
     this.posteoFormulario.emit(producto)
+    
   }
 
 }

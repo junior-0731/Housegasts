@@ -20,7 +20,7 @@
 .producto-card_name {
   font-size: 18px;
   font-weight: 600;
-  color: #2563eb;
+  color: #000000;
 }
 
 .producto-card_category {
@@ -30,6 +30,9 @@
 
 .producto-card_unite {
   font-size: 15px;
-  color: #059669;
+  color: #f1507b;
   font-weight: 500;
+}
+.actions-crud{
+  background-color: red;
 }

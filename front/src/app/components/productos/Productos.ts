@@ -6,6 +6,6 @@ export interface ProductoCreacionDTO{
 export interface ProductoDTO{
     id:number,
     name:string,
-    category:string,
+    category:number,
     unite:number
 }
