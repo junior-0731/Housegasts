@@ -23,18 +23,21 @@ builder.Services.AddOutputCache(opciones =>
 
 });
 
-builder.Services.AddCors(opciones =>
+builder.Services.AddCors(options =>
 {
-    opciones.AddDefaultPolicy(opcionesCORS =>
-    {
-        opcionesCORS.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-    });
+    options.AddPolicy("AllowAngularDev",
+        policy => policy
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
 });
    
 
 
 
 var app = builder.Build();
+
+app.UseCors("AllowAngularDev");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -46,7 +49,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseOutputCache();
 
-app.UseCors();
 
 app.UseAuthorization();
 

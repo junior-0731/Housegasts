@@ -22,29 +22,20 @@ namespace backend.Controllers
         // [HttpGet("ObtenerTodos")] // api/generos/ObtenerTodos
         [HttpGet]
         [OutputCache(Tags = [cacheTag])]
-        public List<Producto> Get()
+        public List<ProductoSend> Get()
         {
-            return new List<Producto>()
+            // Obtiene los productos de la base de datos y los mapea a ProductoSend
+            return context.Productos
+                .Select(p => new ProductoSend
                 {
-                    new Producto { Id = 1, Name = "Bolsa Yogures", Category = 0, Unite = 1 },
-                    new Producto { Id = 2, Name = "Leche Entera", Category = 0, Unite = 1 },
-                    new Producto { Id = 3, Name = "Pan Integral", Category = 0, Unite = 1 },
-                    new Producto { Id = 4, Name = "Huevos (12 unidades)", Category = 0, Unite = 1 },
-                    new Producto { Id = 5, Name = "Manzana Roja", Category = 0, Unite = 1 },
-                    new Producto { Id = 6, Name = "Zanahoria", Category = 0, Unite = 1 },
-                    new Producto { Id = 7, Name = "Pollo Entero", Category = 0, Unite = 1 },
-                    new Producto { Id = 8, Name = "Arroz Blanco", Category = 0, Unite = 1 },
-                    new Producto { Id = 9, Name = "Aceite de Oliva", Category = 0, Unite = 1 },
-                    new Producto { Id = 10, Name = "Queso Rallado", Category = 0, Unite = 1 },
-                    new Producto { Id = 11, Name = "Café Molido", Category = 0, Unite = 1 },
-                    new Producto { Id = 12, Name = "Pasta Espagueti", Category = 0, Unite = 1 },
-                    new Producto { Id = 13, Name = "Tomate", Category = 0, Unite = 1 },
-                    new Producto { Id = 14, Name = "Atún en Lata", Category = 0, Unite = 1 },
-                    new Producto { Id = 15, Name = "Galletas Integrales", Category = 0, Unite = 1 }
-                };
-
-                 }
-
+                    Id = p.Id,
+                    Name = p.Name,
+                    // aca debe de ir una relacion para obtener la categoria de la tabla de categorias
+                    Category = p.Category.ToString(), // Si Category ya es string, elimina el ToString()
+                    Unite = p.Unite
+                })
+                .ToList();
+        }
 
         [HttpGet("{id}", Name = "ObtenerProductoPorId"),]
         [OutputCache]

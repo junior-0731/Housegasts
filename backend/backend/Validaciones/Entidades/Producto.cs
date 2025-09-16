@@ -14,4 +14,12 @@ namespace pelicualasAPI.Entidades
         public int Unite { get; set; }
 
     }
+    public class ProductoSend
+    {
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public string Category { get; set; }
+        public int Unite { get; set; }
+
+    }
 }
