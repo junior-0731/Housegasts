@@ -1,4 +1,5 @@
 using backend;
+using backend.utilidades;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
@@ -28,6 +30,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngularDev",
         policy => policy
             .WithOrigins("http://localhost:4200")
+            .WithExposedHeaders("cantidadTotalRegistros")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
