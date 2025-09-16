@@ -1,11 +1,11 @@
 export interface ProductoCreacionDTO{
-    Name:string,
-    Category:number,
-    Unite:number
+    name:string,
+    category:number,
+    unite:number
 }
 export interface ProductoDTO{
-    Id:number,
-    Name:string,
-    Category:string,
-    Unite:number
+    id:number,
+    name:string,
+    category:string,
+    unite:number
 }

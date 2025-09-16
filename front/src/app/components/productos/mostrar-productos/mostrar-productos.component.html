@@ -1,0 +1,8 @@
+<div class="contenedor-productos">
+
+
+    @for (producto of productos; track $index) {
+        <app-item-producto [producto]="producto"></app-item-producto>
+    }
+</div>
+

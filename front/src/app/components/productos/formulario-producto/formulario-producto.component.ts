@@ -25,14 +25,14 @@ export class FormularioProductoComponent implements OnInit {
   posteoFormulario = new EventEmitter<ProductoCreacionDTO>()
   
   form = this.formbuilder.group({
-    Name:['', {validators:[Validators.required, primeraLetraMayuscula()]}],
-    Category:[0, {validators:[Validators.required]}],
-    Unite:[0, {validators:[Validators.required]}],
+    name:['', {validators:[Validators.required, primeraLetraMayuscula()]}],
+    category:[0, {validators:[Validators.required]}],
+    unite:[0, {validators:[Validators.required]}],
   }
   )
 
   obtenerErrorCampoNombre():string{
-    let nombre = this.form.controls.Name;
+    let nombre = this.form.controls.name;
     if(nombre.hasError('required')){
       return 'El nombre es requerido'
     }
