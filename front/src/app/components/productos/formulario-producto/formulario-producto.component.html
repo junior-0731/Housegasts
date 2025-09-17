@@ -1,23 +1,103 @@
-<form (submit)="guardarCambios()" [formGroup]="form"> <!-- agregar el evento submit que ejecutara una funcion guardarCambios() y un formGroup que hace referencia a form -->
-    <mat-form-field appearance="outline">
-        <mat-label>Nombre</mat-label> <!-- Este seria el label -->
-        <input matInput [formControl]="form.controls.name">
-        <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
-    </mat-form-field><!-- Este seria el tipo de input que seria uno normal, (es de Material icons) -->
-    <mat-form-field appearance="outline">
-        <mat-label>Categoria</mat-label> <!-- Este seria el label -->
-        <input matInput type="number" [formControl]="form.controls.category">
-        <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
-    </mat-form-field><!-- Este seria el tipo de input que seria uno normal, (es de Material icons) -->
+<div class="form-container">
+  <div class="form-header">
+    <h2 class="form-title">
+      <span class="form-icon">📦</span>
+      {{modelo ? 'Editar Producto' : 'Crear Nuevo Producto'}}
+    </h2>
+    <p class="form-subtitle">Completa la información del producto</p>
+  </div>
 
+  <form (submit)="guardarCambios()" [formGroup]="form" class="product-form">
+    <div class="form-grid">
+      <!-- Campo Nombre -->
+      <div class="form-group">
+        <label class="form-label">
+          <span class="label-icon">🏷️</span>
+          Nombre del Producto
+        </label>
+        <div class="input-container">
+          <input 
+            type="text" 
+            class="form-input" 
+            [formControl]="form.controls.name"
+            placeholder="Ingresa el nombre del producto"
+            [class.error]="form.controls.name.invalid && form.controls.name.touched">
+          <div class="input-border"></div>
+        </div>
+        <div class="error-message" *ngIf="form.controls.name.invalid && form.controls.name.touched">
+          {{obtenerErrorCampoNombre()}}
+        </div>
+      </div>
 
-    <mat-form-field appearance="outline">
-        <mat-label>Unidad</mat-label> <!-- Este seria el label -->
-        <input matInput type="number" [formControl]="form.controls.unite">
-        <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
-    </mat-form-field><!-- Este seria el tipo de input que seria uno normal, (es de Material icons) -->
-    <div class="contenedor-botones">
-        <button [disabled]="form.invalid" mat-flat-button type="submit">Guardar Cambios</button>
-        <a mat-stroked-button routerLink="/products">Cancelar</a>
+      <!-- Campo Categoría -->
+      <div class="form-group">
+        <label class="form-label">
+          <span class="label-icon">📂</span>
+          Categoría
+        </label>
+        <div class="input-container">
+          <select 
+            class="form-select" 
+            [formControl]="form.controls.category"
+            [class.error]="form.controls.category.invalid && form.controls.category.touched">
+            <option value="0" disabled>Selecciona una categoría</option>
+            <!-- TODO: Proximamente se cargarán las categorías desde el backend -->
+            <option value="1">Frutas</option>
+            <option value="2">Verduras</option>
+            <option value="3">Lácteos</option>
+            <option value="4">Carnes</option>
+            <option value="5">Granos</option>
+            <option value="6">Bebidas</option>
+            <option value="7">Snacks</option>
+            <option value="8">Otros</option>
+          </select>
+          <div class="input-border"></div>
+        </div>
+        <div class="error-message" *ngIf="form.controls.category.invalid && form.controls.category.touched">
+          {{obtenerErrorCampoCategoria()}}
+        </div>
+      </div>
+
+      <!-- Campo Unidades -->
+      <div class="form-group">
+        <label class="form-label">
+          <span class="label-icon">📊</span>
+          Cantidad de Unidades
+        </label>
+        <div class="input-container">
+          <input 
+            type="number" 
+            class="form-input" 
+            [formControl]="form.controls.unite"
+            placeholder="Ingresa la cantidad"
+            min="0"
+            [class.error]="form.controls.unite.invalid && form.controls.unite.touched">
+          <div class="input-border"></div>
+        </div>
+        <div class="error-message" *ngIf="form.controls.unite.invalid && form.controls.unite.touched">
+          {{obtenerErrorCampoUnidades()}}
+        </div>
+      </div>
     </div>
-</form>
+
+    <!-- Botones de Acción -->
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        class="btn btn-primary btn-large"
+        [disabled]="form.invalid"
+        [class.loading]="form.invalid">
+        <span class="btn-icon">💾</span>
+        <span class="btn-text">{{modelo ? 'Actualizar Producto' : 'Crear Producto'}}</span>
+      </button>
+      
+      <button 
+        type="button" 
+        class="btn btn-secondary btn-large"
+        routerLink="/products">
+        <span class="btn-icon">❌</span>
+        <span class="btn-text">Cancelar</span>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,11 +1,32 @@
-<!-- Aca ira el html del item del producto -->
- <div class="producto-card">
-    <span class="producto-card_id">{{producto.id}}</span>
-    <span class="producto-card_name">{{producto.name}}</span>
-    <span class="producto-card_category">{{producto.category}}</span>
-    <span class="producto-card_unite">Unidades:{{producto.unite}}</span>
-    <div class="actions-crud">
-      <button class="btn-delete" (click)="eliminar(producto.id)">Eliminar</button>
-      <button class="btn-update" (click)="actualizar()">Actualizar</button>
+<div class="product-card">
+  <div class="product-header">
+    <div class="product-id">#{{producto.id}}</div>
+    <div class="product-status">
+      <span class="status-indicator"></span>
+      <span class="status-text">Activo</span>
     </div>
   </div>
+  
+  <div class="product-content">
+    <h3 class="product-name">{{producto.name}}</h3>
+    <div class="product-category">
+      <span class="category-icon">🏷️</span>
+      <span class="category-text">{{producto.category}}</span>
+    </div>
+    <div class="product-units">
+      <span class="units-icon">📦</span>
+      <span class="units-text">{{producto.unite}} unidades</span>
+    </div>
+  </div>
+  
+  <div class="product-actions">
+    <button class="btn-action btn-edit" (click)="actualizar()" title="Editar producto">
+      <span class="btn-icon">✏️</span>
+      <span class="btn-text">Editar</span>
+    </button>
+    <button class="btn-action btn-delete" (click)="eliminar(producto.id)" title="Eliminar producto">
+      <span class="btn-icon">🗑️</span>
+      <span class="btn-text">Eliminar</span>
+    </button>
+  </div>
+</div>

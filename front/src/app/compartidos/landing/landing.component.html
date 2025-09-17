@@ -1,3 +1,183 @@
 <app-header></app-header>
-<p>landing works!</p>
+
+<div class="landing-container">
+  <!-- Background con elementos futuristas -->
+  <div class="background-overlay">
+    <div class="floating-elements">
+      <div class="glow-circle circle-1"></div>
+      <div class="glow-circle circle-2"></div>
+      <div class="glow-circle circle-3"></div>
+      <div class="data-line line-1"></div>
+      <div class="data-line line-2"></div>
+      <div class="data-line line-3"></div>
+    </div>
+    
+    <!-- Icono del carrito futurista -->
+    <div class="futuristic-cart">
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30H150C155.523 30 160 34.477 160 40V160C160 165.523 155.523 170 150 170H50C44.477 170 40 165.523 40 160V40C40 34.477 44.477 30 50 30Z" stroke="#00D4FF" stroke-width="3" fill="none" opacity="0.3"/>
+        <path d="M60 50H140V60H60V50Z" fill="#00D4FF" opacity="0.6"/>
+        <path d="M60 80H140V90H60V80Z" fill="#00D4FF" opacity="0.4"/>
+        <path d="M60 110H140V120H60V110Z" fill="#00D4FF" opacity="0.4"/>
+        <circle cx="80" cy="150" r="8" fill="#00D4FF" opacity="0.6"/>
+        <circle cx="120" cy="150" r="8" fill="#00D4FF" opacity="0.6"/>
+        <path d="M30 20L170 20" stroke="#00D4FF" stroke-width="2" opacity="0.3"/>
+        <path d="M30 180L170 180" stroke="#00D4FF" stroke-width="2" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <div class="welcome-section">
+      <h1 class="main-title">Housegasts</h1>
+      <p class="subtitle">Gestiona tu inventario de manera inteligente</p>
+      <div class="cta-buttons">
+        <button class="btn-primary" routerLink="/products">Ver Productos</button>
+        <button class="btn-secondary" routerLink="/lists">Mis Listas</button>
+      </div>
+    </div>
+
+    <!-- Cards de funcionalidades -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="card-header">
+          <h3>Lista 1</h3>
+          <div class="card-actions">
+            <button class="btn-edit">Editar</button>
+            <button class="btn-delete">Eliminar</button>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="table-header">
+            <span>Nombre</span>
+            <span>Categoria</span>
+            <span>Cantidad / Kg</span>
+          </div>
+          <div class="table-body">
+            <div class="table-row">
+              <span>Zanahoria</span>
+              <span>Verduras</span>
+              <span>10 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Zanahoria</span>
+              <span>Verduras</span>
+              <span>10 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Zanahoria</span>
+              <span>Verduras</span>
+              <span>10 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Zanahoria</span>
+              <span>Verduras</span>
+              <span>10 Kg</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="date">15/09/2025</span>
+            <button class="btn-see-more">Ver mas</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-header">
+          <h3>Lista 2</h3>
+          <div class="card-actions">
+            <button class="btn-edit">Editar</button>
+            <button class="btn-delete">Eliminar</button>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="table-header">
+            <span>Nombre</span>
+            <span>Categoria</span>
+            <span>Cantidad / Kg</span>
+          </div>
+          <div class="table-body">
+            <div class="table-row">
+              <span>Manzana</span>
+              <span>Frutas</span>
+              <span>5 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Pera</span>
+              <span>Frutas</span>
+              <span>3 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Plátano</span>
+              <span>Frutas</span>
+              <span>8 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Naranja</span>
+              <span>Frutas</span>
+              <span>6 Kg</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="date">12/09/2025</span>
+            <button class="btn-see-more">Ver mas</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="card-header">
+          <h3>Lista 3</h3>
+          <div class="card-actions">
+            <button class="btn-edit">Editar</button>
+            <button class="btn-delete">Eliminar</button>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="table-header">
+            <span>Nombre</span>
+            <span>Categoria</span>
+            <span>Cantidad / Kg</span>
+          </div>
+          <div class="table-body">
+            <div class="table-row">
+              <span>Leche</span>
+              <span>Lácteos</span>
+              <span>2 L</span>
+            </div>
+            <div class="table-row">
+              <span>Queso</span>
+              <span>Lácteos</span>
+              <span>1 Kg</span>
+            </div>
+            <div class="table-row">
+              <span>Yogurt</span>
+              <span>Lácteos</span>
+              <span>6 unidades</span>
+            </div>
+            <div class="table-row">
+              <span>Mantequilla</span>
+              <span>Lácteos</span>
+              <span>500 g</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="date">10/09/2025</span>
+            <button class="btn-see-more">Ver mas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón Ver Todas las Listas -->
+    <div class="view-all-section">
+      <button class="btn btn-primary btn-large" routerLink="/lists">
+        <span class="btn-icon">📋</span>
+        Ver Todas las Listas
+      </button>
+    </div>
+  </div>
+</div>
+
 <app-footer></app-footer>

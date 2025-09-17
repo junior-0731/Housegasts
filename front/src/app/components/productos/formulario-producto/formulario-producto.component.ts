@@ -28,6 +28,7 @@ export class FormularioProductoComponent implements OnInit {
   
   form = this.formbuilder.group({
     name:['', {validators:[Validators.required, primeraLetraMayuscula()]}],
+    // TODO: Implementar carga dinámica de categorías desde el backend
     category:[0, {validators:[Validators.required]}],
     unite:[0, {validators:[Validators.required]}],
   }
@@ -36,13 +37,34 @@ export class FormularioProductoComponent implements OnInit {
   obtenerErrorCampoNombre():string{
     let nombre = this.form.controls.name;
     if(nombre.hasError('required')){
-      return 'El nombre es requerido'
+      return 'El nombre del producto es requerido'
     }
     if(nombre.hasError('primeraLetraMayuscula')){
       return nombre.getError('primeraLetraMayuscula').mensaje
     }
     return ''
-    
+  }
+
+  obtenerErrorCampoCategoria():string{
+    let categoria = this.form.controls.category;
+    if(categoria.hasError('required')){
+      return 'Debes seleccionar una categoría'
+    }
+    if(categoria.value === 0){
+      return 'Selecciona una categoría válida'
+    }
+    return ''
+  }
+
+  obtenerErrorCampoUnidades():string{
+    let unidades = this.form.controls.unite;
+    if(unidades.hasError('required')){
+      return 'La cantidad de unidades es requerida'
+    }
+    if(unidades.hasError('min')){
+      return 'La cantidad debe ser mayor a 0'
+    }
+    return ''
   }
   guardarCambios(){
     if(!this.form.valid){

@@ -1,0 +1,181 @@
+.products-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.products-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%2300D4FF" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.products-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00D4FF, #4ECDC4, #45B7D1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+.products-subtitle {
+  color: #B0B0B0;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.products-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  color: #00D4FF;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.empty-state p {
+  color: #B0B0B0;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos personalizados para el paginador de Angular Material */
+::ng-deep .custom-paginator {
+  background: rgba(26, 26, 46, 0.8) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px) !important;
+  color: #E0E0E0 !important;
+}
+
+::ng-deep .custom-paginator .mat-mdc-paginator-page-size-label,
+::ng-deep .custom-paginator .mat-mdc-paginator-range-label {
+  color: #B0B0B0 !important;
+}
+
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-previous,
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-next,
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-first,
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-last {
+  color: #00D4FF !important;
+}
+
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-previous:hover,
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-next:hover,
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-first:hover,
+::ng-deep .custom-paginator .mat-mdc-paginator-navigation-last:hover {
+  background: rgba(0, 212, 255, 0.1) !important;
+}
+
+::ng-deep .custom-paginator .mat-mdc-paginator-page-size-select {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  border-radius: 6px !important;
+  color: #E0E0E0 !important;
+}
+
+::ng-deep .custom-paginator .mat-mdc-paginator-page-size-select .mat-mdc-select-value {
+  color: #E0E0E0 !important;
+}
+
+::ng-deep .custom-paginator .mat-mdc-paginator-page-size-select .mat-mdc-select-arrow {
+  color: #00D4FF !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .products-container {
+    padding: 20px 15px;
+  }
+  
+  .products-title {
+    font-size: 2.2rem;
+  }
+  
+  .products-subtitle {
+    font-size: 1rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .products-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-title {
+    font-size: 1.8rem;
+  }
+  
+  .empty-state {
+    padding: 40px 15px;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+}

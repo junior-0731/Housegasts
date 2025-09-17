@@ -1,14 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ProductosService } from '../Productos.service';
 import { ProductoDTO } from '../Productos';
 import { ItemProductoComponent } from "../item-producto/item-producto.component";
 import { HttpResponse } from '@angular/common/http';
 import { PaginacionDTO } from '../../../compartidos/modelos/PaginacionDTO';
 import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
+import { FooterComponent } from "../../../compartidos/footer/footer.component";
+import { HeaderComponent } from "../../../compartidos/header/header.component";
 @Component({
   selector: 'app-mostrar-productos',
-  imports: [ItemProductoComponent, MatPaginatorModule],
+  imports: [ItemProductoComponent, MatPaginatorModule, FooterComponent, HeaderComponent, RouterLink],
   templateUrl: './mostrar-productos.component.html',
   styleUrl: './mostrar-productos.component.css'
 })
@@ -17,7 +19,7 @@ export class MostrarProductosComponent {
     private productosService = inject(ProductosService);
     public productos : ProductoDTO[] = []
 
-    paginacion: PaginacionDTO = { pagina: 1, recordsPorPagina: 5 };
+    paginacion: PaginacionDTO = { pagina: 1, recordsPorPagina: 8 };
     //Cantidad de registros
     cantidadTotalRegistros!:number;
 

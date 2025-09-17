@@ -9,11 +9,13 @@ import { FormularioProductoComponent } from '../formulario-producto/formulario-p
 import { ProductosService } from '../Productos.service';
 import { extraerErrores } from '../../../compartidos/funciones/extraerErrores';
 import { MostrarErroresComponent } from "../../../compartidos/componentes/mostrar-errores/mostrar-errores.component";
+import { HeaderComponent } from "../../../compartidos/header/header.component";
+import { FooterComponent } from "../../../compartidos/footer/footer.component";
 
 
 @Component({
   selector: 'app-crear-producto',
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormularioProductoComponent, MostrarErroresComponent],
+  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormularioProductoComponent, MostrarErroresComponent, HeaderComponent, FooterComponent],
   templateUrl: './crear-producto.component.html',
   styleUrl: './crear-producto.component.css'
 })

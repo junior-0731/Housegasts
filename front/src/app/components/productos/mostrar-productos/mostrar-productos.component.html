@@ -1,10 +1,41 @@
-<div class="contenedor-productos">
+<app-header></app-header>
+<div class="products-container">
+  <div class="products-header">
+    <h1 class="products-title">Gestión de Productos</h1>
+    <p class="products-subtitle">Administra tu inventario de manera eficiente</p>
+    <div class="products-actions">
+      <button class="btn btn-primary" routerLink="/products/create">
+        Crear Producto
+      </button>
+    </div>
+  </div>
 
-
+  <div class="products-grid">
     @for (producto of productos; track $index) {
-        <app-item-producto [producto]="producto"></app-item-producto>
+      <app-item-producto [producto]="producto"></app-item-producto>
     }
+  </div>
 
+  @if (productos.length === 0) {
+    <div class="empty-state">
+      <div class="empty-icon">📦</div>
+      <h3>No hay productos</h3>
+      <p>Comienza agregando tu primer producto al inventario</p>
+      <button class="btn btn-primary" routerLink="/products/create">
+        Crear Primer Producto
+      </button>
+    </div>
+  }
+
+  <div class="pagination-container">
+    <mat-paginator 
+      showFirstLastButtons 
+      [length]="cantidadTotalRegistros" 
+      [pageSize]="paginacion.recordsPorPagina" 
+      [pageSizeOptions]="[5, 10, 50]" 
+      class="custom-paginator" 
+      (page)="actualizarPaginacion($event)">
+    </mat-paginator>
+  </div>
 </div>
-<mat-paginator showFirstLastButtons [length]="cantidadTotalRegistros" [pageSize]="paginacion.recordsPorPagina" [pageSizeOptions]="[5, 10, 50]" class="mat-elevation-z8" (page)="actualizarPaginacion($event)"></mat-paginator>
-
+<app-footer></app-footer>
