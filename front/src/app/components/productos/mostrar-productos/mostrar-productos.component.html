@@ -12,7 +12,7 @@
 
   <div class="products-grid">
     @for (producto of productos; track $index) {
-      <app-item-producto [producto]="producto"></app-item-producto>
+      <app-item-producto [producto]="producto" (productoEliminado)="cargarRegistros()"></app-item-producto>
     }
   </div>
 

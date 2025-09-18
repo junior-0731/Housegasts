@@ -27,7 +27,6 @@ export class EditarProductoComponent implements OnInit {
   errores:string[] = [];
 
   guardarCambios(producto:ProductoCreacionDTO){
-    console.log(producto)
     this.productosService.actualizar(this.id, producto).subscribe({
       next:()=>{
         this.router.navigate(['/products']);
